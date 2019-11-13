@@ -1,3 +1,4 @@
+import database as db
 import pandas as pd
 import requests
 import timeit
@@ -31,6 +32,12 @@ def get_first_country_by_region(region):
     country = {'region': region,'name': res[0]['name'], 'language': encode_sha1(res[0]['languages'][0]['name']), 'time': total_time}
     return country
 
+def save_countries_db(lst):
+    conn = db.conn
+    for i in lst:
+        conn.execute('INSERT INTO country VALUES(?, ?, ?, ?);', (i['region'], i['name'], i['language'], i['time']));
+        conn.commit()
+
 if __name__ == "__main__":
     countries = []
     regions = get_regions()
@@ -38,3 +45,4 @@ if __name__ == "__main__":
         country = get_first_country_by_region(i)
         countries.append(country)
     calc_exec_times(countries)
+    save_countries_db(countries)
