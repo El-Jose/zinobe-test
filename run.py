@@ -1,6 +1,9 @@
+import requests_cache
 from country import calc_exec_times, countries_to_json, get_first_country_by_region, get_regions
 from database import insert_countries
 
+# Initialize cache
+requests_cache.install_cache('country_cache', backend='sqlite', expire_after=600)
 
 if __name__ == "__main__":
     countries = []
