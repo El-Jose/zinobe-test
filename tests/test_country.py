@@ -28,7 +28,7 @@ def test_countries_2_json():
     import os.path
     assert os.path.exists('data.json') == True
 
-def test_calc_exec_times():
+def test_calc_exec_times_wrong_list():
     lst = ['1', 2, 3, 4 ]
     res = calc_exec_times(lst)
     assert res == "error: Dataframe doesn't have the column required"
