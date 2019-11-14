@@ -1,3 +1,9 @@
+# Zinobe Test
+
+Este repositorio contiene una app web que propone una solucion al problema que se puede leer en el siguiente enunciado. como técnologias principales para su implementación hace uso de Python y SQLite.
+
+## Problema
+
 |  Region | City Name |  Languaje | Time  |
 |---|---|---|---|
 |  Africa | Angola  |  AF4F4762F9BD3F0F4A10CAF5B6E63DC4CE543724 | 0.23 ms  |
@@ -18,8 +24,4 @@ Desarrolle una aplicacion en python que genere la tabla anterior teniendo las si
 10. No usar Framework
 11. Usar Test Unitarios
 12. Presenta un diseño de su solucion.
-
-**Plus** 
-13. Entregar Dockerfile y docker compose con la solucion, en la que se guarde la data en un docker en mongo ademas de sqlite local.
-
 
