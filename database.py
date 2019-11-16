@@ -23,8 +23,9 @@ def insert_countries(lst):
         try:
             conn.execute('INSERT INTO country VALUES(?, ?, ?, ?)', (i['region'], i['name'], i['language'], i['time']));
             conn.commit()
-        except:
-            print('Error on insert countries')
+        except Exception as e:
+            print('Error on insert countries:')
+            print(e)
 
 conn = sql_connection()
 create_country_table(conn)
